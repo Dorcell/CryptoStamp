@@ -3,5 +3,7 @@
 This project is a CryptoStamp company test task
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+0) Install npm packages.
+1) Run `mock:server` to start json-server and get data.
+2) Run `start` to start Angular app. 
+3) Navigate to `http://localhost:4200/`.

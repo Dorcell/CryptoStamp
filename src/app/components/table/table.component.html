@@ -1,0 +1,25 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columnNames">{{column}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td>{{row.id}}</td>
+        <td>{{row.isActive}}</td>
+        <td>{{row.balance}}</td>
+        <td>{{row.picture}}</td>
+        <td>{{row.age}}</td>
+        <td>{{row.name?.first}}</td>
+        <td>{{row.name?.last}}</td>
+        <td>{{row.company}}</td>
+        <td>{{row.email}}</td>
+        <td>{{row.address}}</td>
+        <td>{{row.tags}}</td>
+        <td>{{row.favoriteFruit}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
