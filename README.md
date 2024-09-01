@@ -1,0 +1,2 @@
+# CryptoStamp
+CryptoStamp test task
