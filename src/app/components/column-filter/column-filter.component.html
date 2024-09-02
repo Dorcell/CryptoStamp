@@ -6,6 +6,6 @@
   placeholder="Select columns"
   [showClear]="true"
   [filter]="false"
-  (onChange)="filterColumns()"
-  (onClear)="filterColumns()"
+  (onChange)="filterColumnsEvent.emit(selectedColumns)"
+  (onClear)="filterColumnsEvent.emit(selectedColumns)"
 />

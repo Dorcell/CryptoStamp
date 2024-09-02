@@ -9,10 +9,6 @@ import { ColumnsModel } from '../../models/columns';
 })
 export class ColumnFilterComponent {
   @Output() public filterColumnsEvent = new EventEmitter<string[]>();
-  public selectedColumns: string[] = Object.keys(Columns) as string[];
+  public selectedColumns: string[] = [];
   public columns: ColumnsModel[] = Object.entries(Columns).map(value => ({ key: value[0], name: value[1] }));
-
-  public filterColumns(): void {
-    this.filterColumnsEvent.emit(this.selectedColumns);
-  }
 }

@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { UserModel } from '../../models/user';
-import { ApiService } from '../../services/api.service';
 import { Columns } from '../../enums/columns'
  
 @Component({
@@ -11,23 +10,13 @@ import { Columns } from '../../enums/columns'
 
 export class TableComponent implements OnChanges {
   @Input() public selectedColumns: string[] = [];
+  @Input() public rowsCount?: number = 10;
+  @Input() public tableData: UserModel[] = [];
   public columnNames: string[] = [];
-  public tableData: UserModel[] = [];
-  constructor(private  api: ApiService) { }
-
-  ngOnInit(): void {
-    this.getAllData();
-  }
 
   ngOnChanges(): void {
     this.columnNames = Object.entries(Columns)
       .filter((column) => this.selectedColumns.includes(column[0]))
       .map(column => column[1]);
-  }
-
-  public getAllData(): void {
-    this.api.getData().subscribe(res => {
-      this.tableData = res;
-    })
   }
 }

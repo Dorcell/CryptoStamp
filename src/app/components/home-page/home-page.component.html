@@ -1,5 +1,10 @@
 <div class="page-wrap">
   <app-column-filter (filterColumnsEvent)="onFilterColumns($event)" />
-  <app-table class="table-container" [selectedColumns]="selectedColumns" />
-  <app-paginator />
+  <app-table class="table-container" [selectedColumns]="selectedColumns" [rowsCount]="rowsCount" [tableData]="tableDisplayData" />
+  <p-paginator 
+    (onPageChange)="onPageChange($event)"
+    [totalRecords]="totalCount"
+    [rows]="rowsCount"
+    [rowsPerPageOptions]="[10, 25, 50, 100]"
+  />
 </div>
