@@ -1,25 +1,23 @@
-<div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th *ngFor="let column of columnNames">{{column}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of tableData">
-        <td>{{row.id}}</td>
-        <td>{{row.isActive}}</td>
-        <td>{{row.balance}}</td>
-        <td>{{row.picture}}</td>
-        <td>{{row.age}}</td>
-        <td>{{row.name?.first}}</td>
-        <td>{{row.name?.last}}</td>
-        <td>{{row.company}}</td>
-        <td>{{row.email}}</td>
-        <td>{{row.address}}</td>
-        <td>{{row.tags}}</td>
-        <td>{{row.favoriteFruit}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columnNames">{{column}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of tableData">
+      <td *ngIf="selectedColumns.includes('id')">{{row.id}}</td>
+      <td *ngIf="selectedColumns.includes('isActive')">{{row.isActive}}</td>
+      <td *ngIf="selectedColumns.includes('balance')">{{row.balance}}</td>
+      <td *ngIf="selectedColumns.includes('picture')">{{row.picture}}</td>
+      <td *ngIf="selectedColumns.includes('age')">{{row.age}}</td>
+      <td *ngIf="selectedColumns.includes('firstName')">{{row.name?.first}}</td>
+      <td *ngIf="selectedColumns.includes('lastName')">{{row.name?.last}}</td>
+      <td *ngIf="selectedColumns.includes('company')">{{row.company}}</td>
+      <td *ngIf="selectedColumns.includes('email')">{{row.email}}</td>
+      <td *ngIf="selectedColumns.includes('address')">{{row.address}}</td>
+      <td *ngIf="selectedColumns.includes('tags')">{{row.tags}}</td>
+      <td *ngIf="selectedColumns.includes('favoriteFruit')">{{row.favoriteFruit}}</td>
+    </tr>
+  </tbody>
+</table>

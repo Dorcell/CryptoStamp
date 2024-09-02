@@ -1,1 +1,11 @@
-<p>column-filter works!</p>
+<p-multiSelect
+  [options]="columns"
+  [(ngModel)]="selectedColumns"
+  optionLabel="name"
+  optionValue="key"
+  placeholder="Select columns"
+  [showClear]="true"
+  [filter]="false"
+  (onChange)="filterColumns()"
+  (onClear)="filterColumns()"
+/>

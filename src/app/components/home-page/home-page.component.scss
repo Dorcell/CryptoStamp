@@ -1,0 +1,9 @@
+.page-wrap {
+  & > .table-container {
+    overflow: auto;
+  }
+  & > * {
+    display: block;
+    padding: 10px 20px;
+  }
+}

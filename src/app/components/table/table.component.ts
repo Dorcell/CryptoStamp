@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { UserModel } from '../../models/user';
 import { ApiService } from '../../services/api.service';
 import { Columns } from '../../enums/columns'
@@ -9,14 +9,20 @@ import { Columns } from '../../enums/columns'
   styleUrl: './table.component.scss'
 })
 
-export class TableComponent {
-  public columns: string[] = Object.keys(Columns) as string[];
-  public columnNames: string[] = Object.values(Columns) as string[];
+export class TableComponent implements OnChanges {
+  @Input() public selectedColumns: string[] = [];
+  public columnNames: string[] = [];
   public tableData: UserModel[] = [];
   constructor(private  api: ApiService) { }
 
   ngOnInit(): void {
     this.getAllData();
+  }
+
+  ngOnChanges(): void {
+    this.columnNames = Object.entries(Columns)
+      .filter((column) => this.selectedColumns.includes(column[0]))
+      .map(column => column[1]);
   }
 
   public getAllData(): void {

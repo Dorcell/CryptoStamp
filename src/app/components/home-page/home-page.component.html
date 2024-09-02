@@ -1,0 +1,5 @@
+<div class="page-wrap">
+  <app-column-filter (filterColumnsEvent)="onFilterColumns($event)" />
+  <app-table class="table-container" [selectedColumns]="selectedColumns" />
+  <app-paginator />
+</div>

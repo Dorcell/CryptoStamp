@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CvComponent } from './components/cv/cv.component';
-import { TableComponent } from './components/table/table.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
-  { path: '', component: TableComponent },
+  { path: '', component: HomePageComponent },
   { path: 'cv', component: CvComponent},
-  { path: '**', component: TableComponent }
+  { path: '**', component: HomePageComponent }
 ];
 
 @NgModule({

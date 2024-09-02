@@ -8,7 +8,7 @@ export enum Columns {
   lastName = 'Last name',
   company = 'Company',
   email = 'Email',
-  addres = 'Addres',
+  address = 'Address',
   tags = 'Tags',
   favoriteFruit = 'Favorite fruit'
 }
