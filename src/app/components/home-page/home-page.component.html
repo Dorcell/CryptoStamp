@@ -1,6 +1,14 @@
 <div class="page-wrap">
-  <app-column-filter (filterColumnsEvent)="onFilterColumns($event)" />
-  <app-table class="table-container" [selectedColumns]="selectedColumns" [rowsCount]="rowsCount" [tableData]="tableDisplayData" />
+  <div class="table-top">
+    <app-search-bar class="search" (searchEvent)="onSearch($event)" />
+    <app-column-filter (filterColumnsEvent)="onFilterColumns($event)" />
+  </div>
+  <app-table
+    class="table-container"
+    [selectedColumns]="selectedColumns"
+    [tableData]="tableDisplayData"
+    (sortEvent)="onSort($event)"
+  />
   <p-paginator 
     (onPageChange)="onPageChange($event)"
     [totalRecords]="totalCount"

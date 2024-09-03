@@ -1,7 +1,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th *ngFor="let column of columnNames">{{column}}</th>
+      <th *ngFor="let column of columns" (click)="setSort(column.key)">
+        <span>{{column.name}}</span>
+        <img *ngIf="sortParams.sortField === column.key" [ngClass]="sortParams.sort" src="arrow.svg" >
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -11,8 +14,8 @@
       <td *ngIf="selectedColumns.includes('balance')">{{row.balance}}</td>
       <td *ngIf="selectedColumns.includes('picture')">{{row.picture}}</td>
       <td *ngIf="selectedColumns.includes('age')">{{row.age}}</td>
-      <td *ngIf="selectedColumns.includes('firstName')">{{row.name?.first}}</td>
-      <td *ngIf="selectedColumns.includes('lastName')">{{row.name?.last}}</td>
+      <td *ngIf="selectedColumns.includes('firstName')">{{row.firstName}}</td>
+      <td *ngIf="selectedColumns.includes('lastName')">{{row.lastName}}</td>
       <td *ngIf="selectedColumns.includes('company')">{{row.company}}</td>
       <td *ngIf="selectedColumns.includes('email')">{{row.email}}</td>
       <td *ngIf="selectedColumns.includes('address')">{{row.address}}</td>

@@ -4,5 +4,23 @@
     border: 1px solid blue;
     padding: 0.5em;
     min-height: 10em;
+    text-align: center;
+  }
+  th {
+    padding: 0.5em 1.5em;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    img {
+      position: absolute;
+      right: 0.5em;
+      margin-block: auto;
+      height: fit-content;
+      top: 0;
+      bottom: 0;
+      &.desc {
+        transform: rotate(180deg);
+      }
+    }
   }
 }

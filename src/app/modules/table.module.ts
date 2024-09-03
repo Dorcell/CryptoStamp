@@ -8,12 +8,13 @@ import { HomePageComponent } from "../components/home-page/home-page.component";
 import { TableComponent } from "../components/table/table.component";
 import { ApiService } from "../services/api.service";
 import { SearchBarComponent } from "../components/search-bar/search-bar.component";
+import { TableService } from "../services/table.service";
 
 @NgModule({
   imports: [BrowserModule, MultiSelectModule, PaginatorModule, FormsModule],
   declarations: [HomePageComponent, TableComponent, ColumnFilterComponent, SearchBarComponent],
   exports: [HomePageComponent],
-  providers: [ApiService]
+  providers: [ApiService, TableService]
 })
 
 export class TableModule {};

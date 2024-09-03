@@ -1,4 +1,11 @@
 .page-wrap {
+  & > .table-top {
+    display: flex;
+    justify-content: space-between;
+    & > .search {
+      width: 35%;
+    }
+  }
   & > .table-container {
     overflow: auto;
   }
